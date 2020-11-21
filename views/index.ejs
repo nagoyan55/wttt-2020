@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Image</title>
+    <link rel='stylesheet' type="text/css" href='/public/stylesheets/images.css' />
+    <script type="text/javascript" src="/public/third_party/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/public/javascripts/index.js"></script>
+  </head>
+  <body>
+    <input type="hidden" class="image-urls" value="<%= message %>">
+    <h1>Image search from google(WEB Scraping)</h1>
+    <br>
+    <div class="input-form">
+      <input type="text" class="search-field">
+      <input type="button" class="search-button" value="Do search">
+      <h2 class="search-word">Search word: <%= word %></h2>
+    </div>
+    <br>
+    <div class="container"></div>
+  </body>
+</html>
