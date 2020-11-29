@@ -6,7 +6,9 @@
     <title>Book</title>
 </head>
 <body>
-    book
-    <%= rows[0].id %> | <%= rows[0].name %>
+    <p>book</p>
+    <% rows.forEach((id, name)=>{ %>
+    <p><%= id %> | <%= name %></p>
+    <% }) %>
 </body>
 </html>
