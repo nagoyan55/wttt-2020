@@ -27,9 +27,9 @@ router.get('/book', function(req, res, next){
     text: 'SELECT * FROM mybook;'
   }
   client.query(query)
-    .then(res=>{
+    .then(ret=>{
       res.render('book', {
-        rows:rows
+        rows:ret.rows
       })
     })
     .catch(e=>console.log(e.stack));
