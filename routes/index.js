@@ -1,7 +1,7 @@
 var express = require('express');
 var cheerioClient = require('cheerio-httpcli')
 var router = express.Router();
-var {client} = require('../db/db');
+var {client} = require('../db/db.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
