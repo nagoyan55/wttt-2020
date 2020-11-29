@@ -2,11 +2,10 @@ require('dotenv').config();
 var {Client} = require('pg');
 
 var client = new Client({
-    host: process.env.ENV_HOST,
-    database: process.env.ENV_DB,
-    user: process.env.ENV_USER,
-    port: 5432,
-    password: process.env.ENV_PASSWORD
+    connectionString: process.env.DATABASE_URL,
+    ssl:{
+        rejectUnauthorized: false
+    }
 });
 
 client.connect()
