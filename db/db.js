@@ -6,7 +6,7 @@ var client = new Client({
     database: process.env.ENV_DB,
     user: process.env.ENV_USER,
     port: 5432,
-    password: process.ENV_PASSWORD
+    password: process.env.ENV_PASSWORD
 });
 
 client.connect()
