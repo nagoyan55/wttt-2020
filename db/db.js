@@ -13,4 +13,7 @@ client.connect()
     .then(console.log("connected"))
     .catch(e=>console.log(e));
 
-export{client}
+exports = 
+{
+    client:client
+}
