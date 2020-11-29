@@ -28,7 +28,7 @@ router.get('/book', function(req, res, next){
   }
   client.query(query)
     .then(res=>{
-      render('book', {
+      res.render('book', {
         rows:rows
       })
     })
