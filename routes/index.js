@@ -1,6 +1,7 @@
 var express = require('express');
 var cheerioClient = require('cheerio-httpcli')
 var router = express.Router();
+var {client} = require('../db/db');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -8,6 +9,16 @@ router.get('/', function(req, res, next) {
     message: '{}',
     word: ''
   });
+});
+
+router.get('/book', function(req, res, next){
+  const query={
+    text: 'SELECT * FROM mybook;'
+  }
+  client.query(query)
+    .then(res=>console.log(res.rows[0]))
+    .catch(e=>console.log(e.stack));
+  res.render('book');
 });
 
 router.get('/searchWord/:word', function(req, res, next){
