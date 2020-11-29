@@ -1,8 +1,18 @@
 var express = require('express');
 var cheerioClient = require('cheerio-httpcli')
 var router = express.Router();
-var db = require('../db/db.js');
-var client = db.client;
+require('dotenv').config();
+var {Client} = require('pg');
+
+var client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl:{
+      rejectUnauthorized: false
+  }
+});
+client.connect()
+    .then(console.log("connected"))
+    .catch(e=>console.log(e));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -13,7 +23,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/book', function(req, res, next){
-  console.log(db);
+  console.log(client);
   const query={
     text: 'SELECT * FROM mybook;'
   }
