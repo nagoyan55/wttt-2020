@@ -23,14 +23,16 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/book', function(req, res, next){
-  console.log(client);
   const query={
     text: 'SELECT * FROM mybook;'
   }
   client.query(query)
-    .then(res=>console.log(res.rows[0]))
+    .then(res=>{
+      render('book', {
+        rows:rows
+      })
+    })
     .catch(e=>console.log(e.stack));
-  res.render('book');
 });
 
 router.get('/searchWord/:word', function(req, res, next){
