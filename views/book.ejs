@@ -7,8 +7,8 @@
 </head>
 <body>
     <p>book</p>
-    <% rows.forEach((id, name)=>{ %>
-    <p><%= id %> | <%= name %></p>
+    <% rows.forEach((value, key)=>{ %>
+    <p><%= value.id %> | <%= value.name %></p>
     <% }) %>
 </body>
 </html>
