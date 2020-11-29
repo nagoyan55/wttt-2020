@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book</title>
+    <title>Images</title>
 </head>
 <body>
-    <p>book</p>
+    <p>images</p>
     <% rows.forEach((value, key)=>{ %>
-    <p><%= value.id %> | <%= value.name %></p>
+    <p><%= value.word %> | <%= value.url %> | <%= value.vote %></p>
     <% }) %>
 </body>
 </html>

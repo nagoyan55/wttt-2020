@@ -22,13 +22,13 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/book', function(req, res, next){
+router.get('/images', function(req, res, next){
   const query={
-    text: 'SELECT * FROM mybook;'
+    text: 'SELECT * FROM images;'
   }
   client.query(query)
     .then(ret=>{
-      res.render('book', {
+      res.render('images', {
         rows:ret.rows
       })
     })
